@@ -39,3 +39,15 @@ fn main() {
     let b = Board::new();
     println!("{}", b)
 }
+
+#[cfg(test)]
+mod tests{
+    use crate::Board;
+
+    #[test]
+    fn test_new(){
+        let b = Board::new();
+        assert_eq!(b.board.len(), 8);
+        assert_eq!(b.board[0].len(), 8)
+    }
+}
